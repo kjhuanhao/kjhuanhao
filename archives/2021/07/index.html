@@ -24,7 +24,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：picee - Huanhao&#39;s Blog</title>
+  <title>归档：2021/7 - Huanhao&#39;s Blog</title>
   
 
   
@@ -106,7 +106,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -429,7 +429,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="half" class='cover-wrapper  dock' style="display: ;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/kjhuanhao/blogcdn@master/wallhaven-3z3jk3.4l4kzzt0s2k0.jpg"></div>
           
@@ -489,11 +489,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper" id="pjax-container">
           
 
-
 <div class='l_main'>
-  
-    
-      
+	
+		
   <section class="post-list">
     
       
@@ -513,29 +511,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" >
-      <a href="/2020/03/23/picee/">
-        【hexo博客进阶】2.图床的使用和搭建
+      <a href="/2021/07/04/new/">
+        new
       </a>
     </h2>
   
   <div class='md'>
-    
-      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在markdown的学习里面，我们知道只有插入超链接的图片，才能使博客速度加快，所以本教程教你如何使用图床，如果你希望自己搭建一个，也会在本教程提到</p>
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-03-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/picee/">picee</a>
+        <time>2021-07-04</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/03/23/picee/'>
+          <a class='readmore' href='/2021/07/04/new/'>
             阅读全文
           </a>
         </div>
@@ -555,8 +548,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-    
-  
+	
 </div>
 <aside class='l_side'>
   
@@ -744,14 +736,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.add("show");
+  l_header.classList.remove("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="none";
-    cover_wrapper.style.display="none";
+    cover_wrapper.id="half";
+    cover_wrapper.style.display="";
     
   
 </script>
