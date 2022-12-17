@@ -1,0 +1,588 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>【系统篇】ArchLinux系统安装 | Huanhao's blog</title><meta name="keywords" content="linux,archlinux"><meta name="author" content="赖佳豪"><meta name="copyright" content="赖佳豪"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本教程为最新安装Linux的教程，想看更详细可以到我B站主页看视频教程本教程参考自 https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;Installation_guide本教程于2019.11.9日编写，请根据查阅时间参考本教程（官网安装方式未更新，则本教程保持最新状态）教程中的镜像更新时间：2019.11.01">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【系统篇】ArchLinux系统安装">
+<meta property="og:url" content="https://www.laijiahao.cn/posts/bcd1ce9e/index.html">
+<meta property="og:site_name" content="Huanhao&#39;s blog">
+<meta property="og:description" content="本教程为最新安装Linux的教程，想看更详细可以到我B站主页看视频教程本教程参考自 https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;index.php&#x2F;Installation_guide本教程于2019.11.9日编写，请根据查阅时间参考本教程（官网安装方式未更新，则本教程保持最新状态）教程中的镜像更新时间：2019.11.01">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.api.tianli0.top/">
+<meta property="article:published_time" content="2020-03-23T13:41:30.000Z">
+<meta property="article:modified_time" content="2022-12-17T04:04:43.354Z">
+<meta property="article:author" content="赖佳豪">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="archlinux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.api.tianli0.top/"><link rel="shortcut icon" href="https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd"><link rel="canonical" href="https://www.laijiahao.cn/posts/bcd1ce9e/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?af34a7adbaad7c055d0650cf9f19fb2f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":250,"position":"top","messagePrev":"此文章已经有","messageNext":"天没有更新了，某些内容或许已经过时了，如需要技术支持，请在评论区留言所需问题！"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【系统篇】ArchLinux系统安装',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-17 12:04:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://img1.tianli0.top/copyright.css"><link rel="stylesheet" href="https://img1.tianli0.top/background.css"><link rel="stylesheet" href="https://img1.tianli0.top/expand.css"><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3639040_xhoyfzkmr8c.css"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/animate.css@4.1.1/animate.min.css" media="defer" onload="this.media='all'"><link rel="preconnect" href="https://s1.hdslb.com/"><link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" media="all" onload="this.media='all'"><link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/medium.css" media="all" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Huanhao's blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shouye"></use></svg><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce"></use></svg><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shiyanshi"></use></svg><span> 实验室</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://cdn1.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-SCDNanquanjiasu"></use></svg><span> JSD-CDN</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://img.api.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qiehuan"></use></svg><span> 随机动漫壁纸</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://reference.laijiahao.cn/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bianqian"></use></svg><span> 速查手册</span></a></li><li><a class="site-page child" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiaoxi"></use></svg><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gerenziliao"></use></svg><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-more"></use></svg><span> 更多</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://s2.loli.net/2022/08/17/HgexRCWtpQf1K8m.png"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-beifen-xiaotubiao_food-mifan"></use></svg><span> 外卖领卷</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://vika.cn/share/shrqFcNPBiy0g2BUFqMdC/dstr3siQvlcG3yLLmd/viwrK7SyW9buj"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 软件推荐</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.api.tianli0.top')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Huanhao's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shouye"></use></svg><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce"></use></svg><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shiyanshi"></use></svg><span> 实验室</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://cdn1.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-SCDNanquanjiasu"></use></svg><span> JSD-CDN</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://img.api.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qiehuan"></use></svg><span> 随机动漫壁纸</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://reference.laijiahao.cn/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bianqian"></use></svg><span> 速查手册</span></a></li><li><a class="site-page child" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiaoxi"></use></svg><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gerenziliao"></use></svg><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-more"></use></svg><span> 更多</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://s2.loli.net/2022/08/17/HgexRCWtpQf1K8m.png"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-beifen-xiaotubiao_food-mifan"></use></svg><span> 外卖领卷</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://vika.cn/share/shrqFcNPBiy0g2BUFqMdC/dstr3siQvlcG3yLLmd/viwrK7SyW9buj"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 软件推荐</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【系统篇】ArchLinux系统安装</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-03-23T13:41:30.000Z" title="发表于 2020-03-23 21:41:30">2020-03-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-17T04:04:43.354Z" title="更新于 2022-12-17 12:04:43">2022-12-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/archlinux/">archlinux</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/archlinux/linux/">linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="【系统篇】ArchLinux系统安装"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>本教程为最新安装Linux的教程，想看更详细可以到我B站主页看视频教程<br>本教程参考自 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Installation_guide">https://wiki.archlinux.org/index.php/Installation_guide</a><br>本教程于2019.11.9日编写，请根据查阅时间参考本教程（官网安装方式未更新，则本教程保持最新状态）<br>教程中的镜像更新时间：2019.11.01</p>
+<span id="more"></span>
+
+
+<h2 id="ArchLinux安装配置手册-系统篇"><a href="#ArchLinux安装配置手册-系统篇" class="headerlink" title="ArchLinux安装配置手册[系统篇]"></a>ArchLinux安装配置手册[系统篇]</h2><p>本教程参考自 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Installation_guide">https://wiki.archlinux.org/index.php/Installation_guide</a> </p>
+<p>本教程于2019.11.9日编写，请根据查阅时间参考本教程（官网安装方式未更新，则本教程保持最新状态）</p>
+<p>教程中的镜像更新时间：2019.11.01</p>
+<blockquote>
+<p>作者：Huanhao</p>
+<p>bilibili：Mrhuanhao</p>
+<p>转载请标明出处！</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://space.bilibili.com/67268239?from=search&seid=12790814009981502609" class="LinkCard">Mrhuanhao</a></p>
+<h1 id="安装前的准备"><a href="#安装前的准备" class="headerlink" title="安装前的准备"></a>安装前的准备</h1><p>镜像下载地址：<a target="_blank" rel="noopener" href="https://archlinux.org/download/">https://archlinux.org/download/</a></p>
+<blockquote>
+<p>未使用过Linux的用户，建议先了解一下Linux</p>
+</blockquote>
+<p>如果你是从HTTP镜像源下载的镜像，我建议你检查一下签名： <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/GnuPG">https://wiki.archlinux.org/index.php/GnuPG</a> </p>
+<hr>
+<h1 id="启动Live环境"><a href="#启动Live环境" class="headerlink" title="启动Live环境"></a>启动Live环境</h1><p><strong>（1）制作启动盘</strong></p>
+<p>如果你是Windows用户，你可以使用<a target="_blank" rel="noopener" href="http://rufus.ie/">Rufus</a>来制作，具体使用方法你可以查阅一下百度。</p>
+<p>如果你是Linux用户，你只需要使用dd命令即可，相信你肯定会的。</p>
+<p><strong>（2）进入Live环境</strong></p>
+<ul>
+<li><p>选择从带有 Arch 安装文件的媒介启动通常是在你电脑开机的时候按下某个按键，一般会在启动画面有提示。不同的主板按键不同。</p>
+</li>
+<li><p>当 Arch 菜单出现时，选择 <em>Boot Arch Linux</em> 并按 <code>Enter</code> 进入安装环境。</p>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/kjhuanhao/cdn/arch/Snipaste_2019-11-09_16-16-01.png"></p>
+<hr>
+<h1 id="验证启动模式（重要）"><a href="#验证启动模式（重要）" class="headerlink" title="验证启动模式（重要）"></a>验证启动模式（重要）</h1><p>可以列出 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/UEFI#UEFI_variables">efivars</a> 目录以验证启动模式： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
+
+<p> 如果目录不存在，系统可能以 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/BIOS">BIOS</a> 或 CSM 模式启动，详见您的主板手册。 </p>
+<p>如果目录存在。系统就是以UEFI启动。</p>
+<blockquote>
+<p>请记住你的启动模式！！！</p>
+</blockquote>
+<hr>
+<h1 id="连接网络"><a href="#连接网络" class="headerlink" title="连接网络"></a>连接网络</h1><blockquote>
+<p>请选择其中一种方式连接</p>
+</blockquote>
+<ul>
+<li>1.连接网线</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dhcpcd</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>2.连接WiFi</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wifi-menu</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>3.使用ADSL宽带连接</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pppoe-setup     <span class="comment">#配置</span></span><br><span class="line">systemctl start adsl    <span class="comment">#连接ADSL</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="检查网络连接"><a href="#检查网络连接" class="headerlink" title="检查网络连接"></a>检查网络连接</h2><p>使用ping检查网络连接，如果看到是如图的样子，证明网络连接成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p><code>Ctrl+c</code>可以结束命令的运行</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/kjhuanhao/cdn/arch/wwqw.png"></p>
+<hr>
+<h1 id="更新系统时间"><a href="#更新系统时间" class="headerlink" title="更新系统时间"></a>更新系统时间</h1><p> 使用 <a target="_blank" rel="noopener" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1">timedatectl</a> 确保系统时间是准确的： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="建立硬盘分区"><a href="#建立硬盘分区" class="headerlink" title="建立硬盘分区"></a>建立硬盘分区</h1><p>查看硬盘情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/gxeQva4uFHzOB6o.png"></p>
+<p>可以看到我有一块30G大小的硬盘，路径是<code>/dev/sda</code>,loop0是镜像文件</p>
+<blockquote>
+<p>一般硬盘路径都是&#x2F;dev&#x2F;sda的格式，如果你有其他硬盘，也许会再多显示一个&#x2F;dev&#x2F;sdxx，请根据其详细信息辨认。</p>
+<p>如果你有固态硬盘<code>sda</code>可能会变成<code>nvme0n1</code></p>
+</blockquote>
+<p>也可以通过lsblk查看硬盘信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT</span><br><span class="line">loop0       7:0    0 476.7M 1 loop /rn/archiso/sfs/airootfs      <span class="comment">#iso镜像</span></span><br><span class="line">sda           8:0    0 465.8G  0 disk   <span class="comment">#465.8G的机械硬盘sda </span></span><br><span class="line">└─sda1        8:1    0 465.8G  0 part /mnt/home <span class="comment">#sda下的第一个分区sda1</span></span><br><span class="line">sdb           8:16   1  14.6G  0  disk  <span class="comment">#16G的启动盘</span></span><br><span class="line">├─sdb1    8:17    1  588M  0 part  /runarchiso/bootmnt</span><br><span class="line">└─sda2    8:18    1  64M  0  part</span><br><span class="line">nvme0n1     259:0    0 119.2G  0 disk   <span class="comment">#119.2G固态硬盘nvme0n1 </span></span><br><span class="line">├─nvme0n1p1 259:1    0   100G  0 part /mnt  <span class="comment">#nme0n1第一个分区nvme0n1p1</span></span><br><span class="line">└─nvme0n1p2 259:2 0 19.2G   0  part  /mnt/boot/efi  <span class="comment">#nme0n1第二个分区nvme0n1p2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> 机械硬盘<code>sda</code> </p>
+<p> 固态硬盘<code>nvme0n1</code> </p>
+</blockquote>
+<hr>
+<h2 id="分区方案"><a href="#分区方案" class="headerlink" title="分区方案"></a>分区方案</h2><table>
+<thead>
+<tr>
+<th align="center">BIOS with <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/MBR">MBR</a></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">挂载点</td>
+<td align="center">分区</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Partition_type">分区类型</a></td>
+<td align="center">建议大小</td>
+</tr>
+<tr>
+<td align="center"><code>/mnt</code></td>
+<td align="center"><code>/dev/sda1</code></td>
+<td align="center">Linux</td>
+<td align="center">剩余空间</td>
+</tr>
+<tr>
+<td align="center">[SWAP]</td>
+<td align="center"><code>/dev/sda2</code></td>
+<td align="center">Linux swap</td>
+<td align="center">More than 512 MiB</td>
+</tr>
+<tr>
+<td align="center">UEFI with <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/GPT">GPT</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">挂载点</td>
+<td align="center">分区</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs">分区类型</a></td>
+<td align="center">建议大小</td>
+</tr>
+<tr>
+<td align="center"><code>/mnt/boot</code></td>
+<td align="center"><code>/dev/sda1</code></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/EFI_system_partition">EFI 系统分区</a></td>
+<td align="center">265–512 MiB</td>
+</tr>
+<tr>
+<td align="center"><code>/mnt</code></td>
+<td align="center"><code>/dev/sda2</code></td>
+<td align="center">Linux x86-64 root (&#x2F;)</td>
+<td align="center">剩余空间</td>
+</tr>
+<tr>
+<td align="center">[SWAP]</td>
+<td align="center"><code>/dev/sda3</code></td>
+<td align="center">Linux swap</td>
+<td align="center">More than 512 MiB</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>分区方案解读：如果你是以<code>BIOS</code>模式启动，你就无须创建和挂载<code>/boot</code>分区。</p>
+<p>如果你是以<code>UEFI</code>模式启动，那你就必须创建和挂载<code>/boot</code>分区</p>
+</blockquote>
+<hr>
+<h2 id="开始分区"><a href="#开始分区" class="headerlink" title="开始分区"></a>开始分区</h2><blockquote>
+<p>在那之前，建议你先了解一下以下分区的作用</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/</span><br><span class="line">/home</span><br><span class="line">/boot</span><br><span class="line">swap</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用<code>cfdisk</code>分区</p>
+<p><code>BIOS选dos，UEFI的选gpt</code></p>
+<blockquote>
+<p>以下的&#x2F;dev&#x2F;sdx字段都代表你的硬盘路径，请根据自身情况修改</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cfdisk /dev/sdx</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/EyHzcmTJ5BlGqX4.png"></p>
+<p>通过左右方向键可以选择下面的选项，选择<code>New</code>然后回车</p>
+<p><strong>先新建<code>/</code>分区</strong></p>
+<p>输入大小然后回车即可创建分区</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/6o73Qld945FmXjz.png"></p>
+<blockquote>
+<p>第一个&#x2F;dev&#x2F;sda1就是我们刚刚创建成功的分区</p>
+<p>Free space 就是剩余的空间</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/DqefBoLlnKMgCah.png"></p>
+<hr>
+<p>新建<code>/home</code>分区</p>
+<p>需要先把光标移到剩余空间，再新建哦！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/R28LV5eubSJTs1Q.png"></p>
+<hr>
+<p><strong>新建&#x2F;boot分区（BIOS启动的不需要）</strong></p>
+<p>不需要太大，256M-512M就可以了</p>
+<blockquote>
+<p>注意：&#x2F;boot分区的建立方式还多一个步骤</p>
+</blockquote>
+<p>选中新建的&#x2F;boot分区，下面的光标移到<code>Type</code>选项</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/QMwcd5DzInsb6KX.png"></p>
+<p>然后选中<code>EFI System</code>回车即可</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/TRIFoY7idjaO1tL.png"></p>
+<hr>
+<p><strong>新建swap分区</strong></p>
+<p>大小一般等于你的运行内存大小</p>
+<p>也是和&#x2F;boot分区差不多，要选择<code>type</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/znpYT1N65aHwE9W.png"></p>
+<p>选中<code>Linux swap</code>然后回车即可</p>
+<hr>
+<h3 id="确认分区"><a href="#确认分区" class="headerlink" title="确认分区"></a>确认分区</h3><p>光标移动到<code>write</code>然后回车</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/sybkAiYaVurUqxP.png"></p>
+<p>输入yes回车确认</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/yERoHSWqMBA1Dzk.png"></p>
+<p>选中<code>Quit</code>，回车即可退出<code>cfdisk</code></p>
+<hr>
+<h3 id="查看分区"><a href="#查看分区" class="headerlink" title="查看分区"></a>查看分区</h3><p>用lsblk即可，可以看到sda硬盘被分成了4个分区，正是我们刚才分的区</p>
+<blockquote>
+<p>sda1 是我的&#x2F;分区</p>
+<p>sda2 是我的&#x2F;home分区</p>
+<p>sda3 是我的&#x2F;boot分区</p>
+<p>sda4 是我的swap分区</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/iPWDrYa1gqQVIpo.png"></p>
+<hr>
+<h1 id="格式化分区"><a href="#格式化分区" class="headerlink" title="格式化分区"></a>格式化分区</h1><p>当分区建立好了，这些分区都需要使用适当的<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/File_systems">文件系统</a>进行格式化</p>
+<blockquote>
+<p><code>注意：</code>请根据自己的分区情况进行对应的格式化，例如我刚刚把sda1作为我的&#x2F;分区且大小为14G</p>
+</blockquote>
+<h2 id="x2F"><a href="#x2F" class="headerlink" title="&#x2F;"></a>&#x2F;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="x2F-home"><a href="#x2F-home" class="headerlink" title="&#x2F;home"></a>&#x2F;home</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="x2F-boot（BIOS启动的不需要）"><a href="#x2F-boot（BIOS启动的不需要）" class="headerlink" title="&#x2F;boot（BIOS启动的不需要）"></a>&#x2F;boot（BIOS启动的不需要）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="swap"><a href="#swap" class="headerlink" title="swap"></a>swap</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkswap /dev/sda4</span><br><span class="line">swapon /dev/sda4</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/jQX5y7MgEbvHVZo.png"></p>
+<hr>
+<h1 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h1><h2 id="x2F-1"><a href="#x2F-1" class="headerlink" title="&#x2F;"></a>&#x2F;</h2><p>将<code>/</code>分区挂载到<code>/mnt</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda1 /mnt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="x2F-home-1"><a href="#x2F-home-1" class="headerlink" title="&#x2F;home"></a>&#x2F;home</h2><p>&#x2F;mnt下创建&#x2F;home文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /mnt/home</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>挂载&#x2F;home分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda2 /mnt/home</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="x2F-boot（BIOS启动的不需要）-1"><a href="#x2F-boot（BIOS启动的不需要）-1" class="headerlink" title="&#x2F;boot（BIOS启动的不需要）"></a>&#x2F;boot（BIOS启动的不需要）</h2><p>&#x2F;mnt下创建&#x2F;boot</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /mnt/boot</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>挂载引导分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda3 /mnt/boot</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/Xd2nOvKWqDIxJLT.png"></p>
+<hr>
+<h1 id="更换镜像源"><a href="#更换镜像源" class="headerlink" title="更换镜像源"></a>更换镜像源</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.d/mirrorlist</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>按下<code>/</code>键，输入China，进入检索模式，搜到China的字样后<code>回车</code>,蓝色的光标就会出现在China的下面</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/Qf5irlMKyE6vwcb.png"></p>
+<p>但是目前显示的这个源我不太想要，按下<code>n</code>键可以跳到下一个China源，正好是我要的清华镜像源</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/T8h4oe9fKNcrQML.png"></p>
+<blockquote>
+<p>为什么不用科大镜像源？</p>
+<p>答：因为不知道是什么原因，每次我安装arch的时候用科大的源会出现连接不到的问题，你也可以找科大的源使用。</p>
+</blockquote>
+<hr>
+<p>然后按下<code>2dd</code>剪切，按下<code>gg</code>回到顶部，按下<code>p</code>粘贴</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/cu1A86NrKQ2aY7O.png"></p>
+<p>建议在清华源的下面再加上一条阿里源，以防安装软件的时候出错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Server = http://mirrors.aliyun.com/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>按<code>i</code>进入编辑模式然后输入，按<code>ESC</code>退出编辑模式</p>
+</blockquote>
+<p>按下<code>：</code>(也就是Shift + ;)，然后输入<code>wq</code>回车，即可保存退出</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/PlSrHLF4dwvyhkT.png" alt="Snipaste_2019-11-09_18-54-46.png"></p>
+<hr>
+<h1 id="安装基础软件包"><a href="#安装基础软件包" class="headerlink" title="安装基础软件包"></a>安装基础软件包</h1><p><a target="_blank" rel="noopener" href="https://www.archlinux.org/packages/?name=base">base</a> 软件包并没有包含全部 live 环境中的程序，<a target="_blank" rel="noopener" href="https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64">packages.x86_64</a> 页面包含了它们的差异。需要额外安装：</p>
+<ul>
+<li>管理所用<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/File_systems">文件系统</a> 的用户工具</li>
+<li>访问 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/RAID">RAID</a> 或 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/LVM">LVM</a> 分区的工具</li>
+<li>未包含在 <a target="_blank" rel="noopener" href="https://www.archlinux.org/packages/?name=linux-firmware">linux-firmware</a> 中的额外固件</li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Networking">联网</a>需要的程序</li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Text_editor">文本编辑器</a>,</li>
+<li>访问 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Man">man</a> 和 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Info">info</a> 页面的工具： <a target="_blank" rel="noopener" href="https://www.archlinux.org/packages/?name=man-db">man-db</a>, <a target="_blank" rel="noopener" href="https://www.archlinux.org/packages/?name=man-pages">man-pages</a> 和 <a target="_blank" rel="noopener" href="https://www.archlinux.org/packages/?name=texinfo">texinfo</a>.</li>
+</ul>
+<p>如果你还想安装其他软件包组比如 <a target="_blank" rel="noopener" href="https://www.archlinux.org/groups/x86_64/base-devel/">base-devel</a>，请将他们的名字添加到 <em>pacstrap</em> 后，并用空格隔开。你也可以在 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Chroot">#Chroot</a> 之后使用 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Pacman">pacman</a> 手动安装软件包或组。</p>
+<blockquote>
+<p>如果你看不懂上面在说什么，那你跟着我运行下面的命令就行了</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacstrap /mnt base linux linux-firmware base-devel vi vim nano dhcpcd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="配置系统"><a href="#配置系统" class="headerlink" title="配置系统"></a>配置系统</h1><h2 id="Fstab"><a href="#Fstab" class="headerlink" title="Fstab"></a>Fstab</h2><p> 用以下命令生成 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Fstab">fstab</a> 文件 (用 <code>-U</code> 或 <code>-L</code> 选项设置UUID 或卷标)： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Change_root">Change root</a> 到新安装的系统： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line">hwclock --systohc</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="本地化设置"><a href="#本地化设置" class="headerlink" title="本地化设置"></a>本地化设置</h2><p> <code>/etc/locale.gen</code> 是一个仅包含注释文档的文本文件。指定您需要的本地化类型，只需移除对应行前面的注释符号（<code>＃</code>）即可，建议选择带 <code>UTF-8</code> 的项： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/locale.gen</span><br><span class="line">en_US.UTF-8 UTF-8</span><br><span class="line">zh_CN.UTF-8 UTF-8</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> 接着执行 <code>locale-gen</code> 以生成 locale 讯息： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> 将 LANG&#x3D;en_US.UTF-8 加入 &#x2F;etc&#x2F;locale.conf  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/locale.conf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="设置主机名"><a href="#设置主机名" class="headerlink" title="设置主机名"></a>设置主机名</h2><p> xxxxs是你的主机名（自己取个喜欢的名字） </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;xxxx&quot;</span> &gt;&gt; /etc/hostname</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> 编辑 &#x2F;etc&#x2F;hosts文件，添加以下内容（xxxx为你的主机名） </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br><span class="line">127.0.0.1    localhost.localdomain    localhost</span><br><span class="line">::1          localhost.localdomain    localhost</span><br><span class="line">127.0.1.1    xxxx.localdomain     xxxx</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="设置root密码"><a href="#设置root密码" class="headerlink" title="设置root密码"></a>设置root密码</h2><p> 使用passwd命令为root用户增加密码 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">passwd </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="安装Intel-ucode（非Inter-CPU不需要）"><a href="#安装Intel-ucode（非Inter-CPU不需要）" class="headerlink" title="安装Intel-ucode（非Inter C	PU不需要）"></a>安装Intel-ucode（非Inter C	PU不需要）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S intel-ucode</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果你的下载出错，可能是网络断开了，那就再连接一次网络即可</p>
+</blockquote>
+<h2 id="安装引导"><a href="#安装引导" class="headerlink" title="安装引导"></a>安装引导</h2><p> 如果你硬盘上还有别的系统，需要安装 os-prober。如果你的系统在别的硬盘单独引导，则不需要。 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S os-prober</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> 对于 BIOS 系统： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub</span><br><span class="line">grub-install --target=i386-pc /dev/sdX    <span class="comment"># sdX 为你的安装硬盘</span></span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> 对于 UEFI 系统： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr</span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2019/11/09/R7sDwzPhLqatm2G.png"></p>
+<hr>
+<h2 id="安装网络连接组件"><a href="#安装网络连接组件" class="headerlink" title="安装网络连接组件"></a>安装网络连接组件</h2><p>这里我提供两种方案，选一个就行(例如我：无线网络组件)</p>
+<p><strong>无线网络组件：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S iw wpa_supplicant dialog netctl  <span class="comment">#无线网络</span></span><br></pre></td></tr></table></figure>
+
+<p>后面重启系统后可以使用<code>wifi-menu</code>命令连网</p>
+<p><strong>有线网络组件：</strong> 注意：笔记本用户千万别手欠，觉得自己笔记本也有网线插口就执行以下命令，否则系统安装好，DNS也会无法解析，除非你真的是使用网线方式连的网络</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> dhcpcd     <span class="comment">#进入系统自动连网</span></span><br><span class="line">systemctl start dhcpcd      <span class="comment">#重启后执行此命令启动网络服务</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h1><p>系统到这里就安装完毕了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br><span class="line">umount -R /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>恭喜你已经安装完了系统，下一篇是安装桌面的指导</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.laijiahao.cn">赖佳豪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.laijiahao.cn/posts/bcd1ce9e/">https://www.laijiahao.cn/posts/bcd1ce9e/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.laijiahao.cn" target="_blank">Huanhao's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a><a class="post-meta__tags" href="/tags/archlinux/">archlinux</a></div><div class="post_share"><div class="social-share" data-image="https://img.api.tianli0.top" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-01-41.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-01-41.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-04-57.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-04-57.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/f8027b7/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.api.tianli0.top" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【桌面篇】ArchLinux安装kde桌面</div></div></a></div><div class="next-post pull-right"><a href="/posts/cbc9fd14/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.api.tianli0.top" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">关于常见进制的转换</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/f8027b7/" title="【桌面篇】ArchLinux安装kde桌面"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.api.tianli0.top" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-23</div><div class="title">【桌面篇】ArchLinux安装kde桌面</div></div></a></div><div><a href="/posts/b2ba01c1/" title="【MAC风】kde美化"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.api.tianli0.top" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-23</div><div class="title">【MAC风】kde美化</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">赖佳豪</div><div class="author-info__description">一个萌新分享自己仅存的技术的地方</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/67268239"><i class="iconfont icon-bilibili"></i><span>关注</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/kjhuanhao" target="_blank" title="Github"><i class="fa-fw fab fa-github"></i></a><a class="social-icon" href="mailto:2077780946@qq.com" target="_blank" title="Email"><i class="fa-fw far fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">换了一个博客主题了</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ArchLinux%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C-%E7%B3%BB%E7%BB%9F%E7%AF%87"><span class="toc-number">1.</span> <span class="toc-text">ArchLinux安装配置手册[系统篇]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87"><span class="toc-number"></span> <span class="toc-text">安装前的准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8Live%E7%8E%AF%E5%A2%83"><span class="toc-number"></span> <span class="toc-text">启动Live环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">验证启动模式（重要）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C"><span class="toc-number"></span> <span class="toc-text">连接网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">检查网络连接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4"><span class="toc-number"></span> <span class="toc-text">更新系统时间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-number"></span> <span class="toc-text">建立硬盘分区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%8C%BA%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">分区方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%88%86%E5%8C%BA"><span class="toc-number">2.</span> <span class="toc-text">开始分区</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E8%AE%A4%E5%88%86%E5%8C%BA"><span class="toc-number">2.1.</span> <span class="toc-text">确认分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%88%86%E5%8C%BA"><span class="toc-number">2.2.</span> <span class="toc-text">查看分区</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%88%86%E5%8C%BA"><span class="toc-number"></span> <span class="toc-text">格式化分区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#x2F"><span class="toc-number">1.</span> <span class="toc-text">&#x2F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x2F-home"><span class="toc-number">2.</span> <span class="toc-text">&#x2F;home</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x2F-boot%EF%BC%88BIOS%E5%90%AF%E5%8A%A8%E7%9A%84%E4%B8%8D%E9%9C%80%E8%A6%81%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">&#x2F;boot（BIOS启动的不需要）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#swap"><span class="toc-number"></span> <span class="toc-text">swap</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA"><span class="toc-number"></span> <span class="toc-text">挂载分区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#x2F-1"><span class="toc-number">1.</span> <span class="toc-text">&#x2F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x2F-home-1"><span class="toc-number">2.</span> <span class="toc-text">&#x2F;home</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x2F-boot%EF%BC%88BIOS%E5%90%AF%E5%8A%A8%E7%9A%84%E4%B8%8D%E9%9C%80%E8%A6%81%EF%BC%89-1"><span class="toc-number">3.</span> <span class="toc-text">&#x2F;boot（BIOS启动的不需要）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number"></span> <span class="toc-text">更换镜像源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="toc-number"></span> <span class="toc-text">安装基础软件包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F"><span class="toc-number"></span> <span class="toc-text">配置系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fstab"><span class="toc-number">1.</span> <span class="toc-text">Fstab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="toc-number">2.</span> <span class="toc-text">设置时区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">本地化设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-number">4.</span> <span class="toc-text">设置主机名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEroot%E5%AF%86%E7%A0%81"><span class="toc-number">5.</span> <span class="toc-text">设置root密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Intel-ucode%EF%BC%88%E9%9D%9EInter-CPU%E4%B8%8D%E9%9C%80%E8%A6%81%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">安装Intel-ucode（非Inter C	PU不需要）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC"><span class="toc-number">7.</span> <span class="toc-text">安装引导</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%BB%84%E4%BB%B6"><span class="toc-number">8.</span> <span class="toc-text">安装网络连接组件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E5%90%AF"><span class="toc-number"></span> <span class="toc-text">重启</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/8418bcbe/" title="win11拨号问题解决方案">win11拨号问题解决方案</a><time datetime="2022-09-16T05:29:19.000Z" title="发表于 2022-09-16 13:29:19">2022-09-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d37b869a/" title="python使用cookie免验证登入">python使用cookie免验证登入</a><time datetime="2022-09-12T05:35:18.000Z" title="发表于 2022-09-12 13:35:18">2022-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/576f6fe5/" title="爬取电影天堂2022榜单的下载地址">爬取电影天堂2022榜单的下载地址</a><time datetime="2022-09-09T14:20:45.000Z" title="发表于 2022-09-09 22:20:45">2022-09-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/85ba1d4c/" title="爬取豆瓣电影榜练习">爬取豆瓣电影榜练习</a><time datetime="2022-09-09T11:26:11.000Z" title="发表于 2022-09-09 19:26:11">2022-09-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/171c2705/" title="twikoo评论设置">twikoo评论设置</a><time datetime="2022-09-09T02:46:19.000Z" title="发表于 2022-09-09 10:46:19">2022-09-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img.api.tianli0.top')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2022 By 赖佳豪</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank"href="https://hexo.io/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo"title="博客框架为Hexo"alt="img"></a><a style="margin-inline:5px"target="_blank"href="https://butterfly.js.org/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender"title="主题采用butterfly"alt="img"></a><a style="margin-inline:5px"target="_blank"href="https://now.sh"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&logo=Vercel"title="本站使用部署于Vercel"alt="img"></a><a style="margin-inline:5px"target="_blank"href="https://github.com/TIANLI0/BF-OK"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Theme-d021d6?style=flat&logo=GitHub"title="本站项目由Gtihub托管"alt="img"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris"alt="img"title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a> <a style="margin-inline:5px"target="_blank"href="https://tianli-blog.club/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/CDN-Tianli-important?style=flat&logo=KeyCDN"title="感谢Tianli-CDN"alt="img"></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twc.laijiahao.cn/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twc.laijiahao.cn/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="/js/fun.js"></script><script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script><script src="https://img1.tianli0.top/statistic.js"></script><script src="https://cdn1.tianli0.top/npm/swiper/swiper-bundle.min.js"></script><script src="https://cdn1.tianli0.top/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><script src="/js/moments.js"></script><script src="/js/kernel.js"></script><script defer src="https://cdn1.tianli0.top/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer data-pjax src="/js/wow_init.js"></script><script src="//at.alicdn.com/t/c/font_3639040_xhoyfzkmr8c.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script></div><!-- hexo injector body_end start --><script data-pjax>function history_calendar_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-history"><div class="card-content"><div class="item-headline"><i class="fas fa-clock fa-spin"></i><span>那年今日</span></div><div id="history-baidu" style="height: 100px;overflow: hidden"><div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%"><div class="swiper-wrapper" id="history_container_wrapper" style="height:20px"></div></div></div></div>';
+                console.log('已挂载history_calendar')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            history_calendar_injector_config()
+        } </script><script data-pjax  src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><!-- hexo injector body_end end --></body></html>

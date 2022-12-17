@@ -1,0 +1,6 @@
+# robots.txt generated at https://www.sojson.com/robots/
+sitemap:https://tianli-blog.club/sitemap.xml
+User-agent: *
+Disallow:/Love/
+Disallow:/Test/
+Disallow:/Pansa/

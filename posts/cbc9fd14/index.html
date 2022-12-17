@@ -1,0 +1,627 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>关于常见进制的转换 | Huanhao's blog</title><meta name="keywords" content="进制"><meta name="author" content="赖佳豪"><meta name="copyright" content="赖佳豪"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="了解进制之间是如何进行转换的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于常见进制的转换">
+<meta property="og:url" content="https://www.laijiahao.cn/posts/cbc9fd14/index.html">
+<meta property="og:site_name" content="Huanhao&#39;s blog">
+<meta property="og:description" content="了解进制之间是如何进行转换的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.api.tianli0.top/">
+<meta property="article:published_time" content="2020-03-23T13:38:25.000Z">
+<meta property="article:modified_time" content="2022-12-17T04:04:43.355Z">
+<meta property="article:author" content="赖佳豪">
+<meta property="article:tag" content="进制">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.api.tianli0.top/"><link rel="shortcut icon" href="https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd"><link rel="canonical" href="https://www.laijiahao.cn/posts/cbc9fd14/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?af34a7adbaad7c055d0650cf9f19fb2f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":250,"position":"top","messagePrev":"此文章已经有","messageNext":"天没有更新了，某些内容或许已经过时了，如需要技术支持，请在评论区留言所需问题！"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '关于常见进制的转换',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-17 12:04:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://img1.tianli0.top/copyright.css"><link rel="stylesheet" href="https://img1.tianli0.top/background.css"><link rel="stylesheet" href="https://img1.tianli0.top/expand.css"><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3639040_xhoyfzkmr8c.css"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/animate.css@4.1.1/animate.min.css" media="defer" onload="this.media='all'"><link rel="preconnect" href="https://s1.hdslb.com/"><link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" media="all" onload="this.media='all'"><link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/medium.css" media="all" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Huanhao's blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shouye"></use></svg><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce"></use></svg><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shiyanshi"></use></svg><span> 实验室</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://cdn1.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-SCDNanquanjiasu"></use></svg><span> JSD-CDN</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://img.api.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qiehuan"></use></svg><span> 随机动漫壁纸</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://reference.laijiahao.cn/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bianqian"></use></svg><span> 速查手册</span></a></li><li><a class="site-page child" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiaoxi"></use></svg><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gerenziliao"></use></svg><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-more"></use></svg><span> 更多</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://s2.loli.net/2022/08/17/HgexRCWtpQf1K8m.png"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-beifen-xiaotubiao_food-mifan"></use></svg><span> 外卖领卷</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://vika.cn/share/shrqFcNPBiy0g2BUFqMdC/dstr3siQvlcG3yLLmd/viwrK7SyW9buj"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 软件推荐</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.api.tianli0.top')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Huanhao's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shouye"></use></svg><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce"></use></svg><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shiyanshi"></use></svg><span> 实验室</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://cdn1.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-SCDNanquanjiasu"></use></svg><span> JSD-CDN</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://img.api.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qiehuan"></use></svg><span> 随机动漫壁纸</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://reference.laijiahao.cn/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bianqian"></use></svg><span> 速查手册</span></a></li><li><a class="site-page child" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiaoxi"></use></svg><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gerenziliao"></use></svg><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-more"></use></svg><span> 更多</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://s2.loli.net/2022/08/17/HgexRCWtpQf1K8m.png"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-beifen-xiaotubiao_food-mifan"></use></svg><span> 外卖领卷</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://vika.cn/share/shrqFcNPBiy0g2BUFqMdC/dstr3siQvlcG3yLLmd/viwrK7SyW9buj"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 软件推荐</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">关于常见进制的转换</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-03-23T13:38:25.000Z" title="发表于 2020-03-23 21:38:25">2020-03-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-17T04:04:43.355Z" title="更新于 2022-12-17 12:04:43">2022-12-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="关于常见进制的转换"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>了解进制之间是如何进行转换的</p>
+<span id="more"></span>
+<h1 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h1><p>二进制是逢二进一</p>
+<p>第一行和第二行相加</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1</th>
+<th>0</th>
+<th>1</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<h2 id="二进制转为十进制"><a href="#二进制转为十进制" class="headerlink" title="二进制转为十进制"></a>二进制转为十进制</h2><p>我们把右边当作低位,左边是高位.</p>
+<p>举个例子:</p>
+<table>
+<thead>
+<tr>
+<th>3</th>
+<th>2</th>
+<th>1</th>
+<th>0</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>二进制数</td>
+</tr>
+<tr>
+<td>2^3^</td>
+<td>0</td>
+<td>2^1^</td>
+<td>0</td>
+<td>&#x3D; 10</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong><code>点拨:</code></strong></p>
+<p>可以看到3210是固定组,往左越来越大,我们从右往左看,二进制数只有0和1,当数字为0时代表没有则为0,如果数字是1,我们就要考虑当前位置对于的位数是多少,例如: 从右往左的第二个数字就是1,而当前位数是1,所以就是2的1次方.最后把所有转换的数字加起来即可.</p>
+<p>总结: 位数 &#x3D; n,遇到1考虑n,2的n次方</p>
+</blockquote>
+<p>上面的例子有个特点就是8,4,2,1这是所有二进制数转十进制通用的</p>
+<p>1110 &#x3D; 14 (8+4+2+0)</p>
+<p>1010 &#x3D; 10 (8+0+2+0)</p>
+<p>0001 &#x3D; 1 (0+0+0+1) </p>
+<hr>
+<h1 id="八进制"><a href="#八进制" class="headerlink" title="八进制"></a>八进制</h1><p>八进制就是逢8进1</p>
+<p>第一行和第二行相加</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>7</th>
+<th>0</th>
+<th>1</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+<td>6</td>
+</tr>
+</tbody></table>
+<h2 id="八进制转十进制"><a href="#八进制转十进制" class="headerlink" title="八进制转十进制"></a>八进制转十进制</h2><table>
+<thead>
+<tr>
+<th>3</th>
+<th>2</th>
+<th>1</th>
+<th>0</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>八进制数</td>
+</tr>
+<tr>
+<td>8^3^</td>
+<td>0</td>
+<td>0</td>
+<td>8^0^</td>
+<td>&#x3D; 513</td>
+</tr>
+</tbody></table>
+<p>上面是个简单的例子,下面进阶一下</p>
+<table>
+<thead>
+<tr>
+<th>3</th>
+<th>2</th>
+<th>1</th>
+<th>0</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>八进制数</td>
+</tr>
+<tr>
+<td>3*8^3^</td>
+<td>0</td>
+<td>0</td>
+<td>5*8^0^</td>
+<td>&#x3D; 1541</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>总结: 原数 * 8的n次方(位数&#x3D;n)</p>
+</blockquote>
+<hr>
+<h1 id="十六进制"><a href="#十六进制" class="headerlink" title="十六进制"></a>十六进制</h1><p>十六进制就是逢十六进一</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>f</th>
+<th>9</th>
+<th>9</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>9</td>
+<td>c</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>c</td>
+<td>2</td>
+<td>d</td>
+</tr>
+</tbody></table>
+<p>因为我们要把数字转为十六进制,所以大于等于10的数字我们用字母代替</p>
+<p>A为10,B为11以此类推</p>
+<h2 id="十六进制转十进制"><a href="#十六进制转十进制" class="headerlink" title="十六进制转十进制"></a>十六进制转十进制</h2><table>
+<thead>
+<tr>
+<th>3</th>
+<th>2</th>
+<th>1</th>
+<th>0</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>十六进制数</td>
+</tr>
+<tr>
+<td>16^3^</td>
+<td>0</td>
+<td>0</td>
+<td>16</td>
+<td>&#x3D; 4097</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>3</th>
+<th>2</th>
+<th>1</th>
+<th>0</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>2</td>
+<td>4</td>
+<td>0</td>
+<td>十六进制数</td>
+</tr>
+<tr>
+<td>0</td>
+<td>2*16^2^</td>
+<td>4*16^1^</td>
+<td>0</td>
+<td>&#x3D; 576</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>总结: 原数 * 16的n次方(位数&#x3D;n)</p>
+</blockquote>
+<hr>
+<h1 id="十进制转X进制"><a href="#十进制转X进制" class="headerlink" title="十进制转X进制"></a>十进制转X进制</h1><h2 id="二进制-1"><a href="#二进制-1" class="headerlink" title="二进制"></a>二进制</h2><p>将要转换的数字直接除二,最后商为0为止</p>
+<table>
+<thead>
+<tr>
+<th>要转换的数字</th>
+<th>商</th>
+<th>余数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>56</td>
+<td>28</td>
+<td>0</td>
+</tr>
+<tr>
+<td>28</td>
+<td>14</td>
+<td>0</td>
+</tr>
+<tr>
+<td>14</td>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr>
+<td>7</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>所以56的二进制是111000(从下往上排列)</p>
+<h2 id="八进制-1"><a href="#八进制-1" class="headerlink" title="八进制"></a>八进制</h2><table>
+<thead>
+<tr>
+<th>要转换的数字</th>
+<th>商</th>
+<th>余数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>99</td>
+<td>12</td>
+<td>3</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>所以99的八进制是143(从下往上排列)</p>
+<h2 id="十六进制-1"><a href="#十六进制-1" class="headerlink" title="十六进制"></a>十六进制</h2><table>
+<thead>
+<tr>
+<th>要转换的数字</th>
+<th>商</th>
+<th>余数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>498</td>
+<td>31</td>
+<td>2</td>
+</tr>
+<tr>
+<td>31</td>
+<td>1</td>
+<td>15</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>所以498的十六进制是1f2(从下往上排列)</p>
+<hr>
+<h1 id="二进制-八进制-十六进制之间的转换"><a href="#二进制-八进制-十六进制之间的转换" class="headerlink" title="二进制,八进制,十六进制之间的转换"></a>二进制,八进制,十六进制之间的转换</h1><h2 id="二进制和八进制"><a href="#二进制和八进制" class="headerlink" title="二进制和八进制"></a>二进制和八进制</h2><blockquote>
+<p>八进制的1位对应二进制的3位</p>
+</blockquote>
+<h3 id="二进制-gt-gt-八进制"><a href="#二进制-gt-gt-八进制" class="headerlink" title="二进制&gt;&gt;八进制"></a>二进制&gt;&gt;八进制</h3><p>10111101010101010010101</p>
+<ul>
+<li>我们把这个二进制数字进行分组,每组3位</li>
+</ul>
+<p>可以分为</p>
+<p>010 111 101 010 101 010 010 101</p>
+<ul>
+<li>然后按照二进制规律转换</li>
+</ul>
+<p>分别对应2 7 5 2 5 2 2 5</p>
+<p>这个数字就是八进制数</p>
+<h3 id="八进制-gt-gt-二进制"><a href="#八进制-gt-gt-二进制" class="headerlink" title="八进制&gt;&gt;二进制"></a>八进制&gt;&gt;二进制</h3><p>1 2 4 5 6 7</p>
+<ul>
+<li>直接把每位数字对应的数进行转换,使用二进制规律8,4,2,1</li>
+</ul>
+<p>分别对应,也是从右往左</p>
+<p>001 010 100 101 110 111</p>
+<hr>
+<h2 id="二进制和十六进制"><a href="#二进制和十六进制" class="headerlink" title="二进制和十六进制"></a>二进制和十六进制</h2><h3 id="二进制-gt-gt-十六进制"><a href="#二进制-gt-gt-十六进制" class="headerlink" title="二进制&gt;&gt;十六进制"></a>二进制&gt;&gt;十六进制</h3><blockquote>
+<p>十六进制的1位对应二进制的4位</p>
+</blockquote>
+<p>010111101010101010010101</p>
+<ul>
+<li>我们把这个二进制数字进行分组,每组4位</li>
+</ul>
+<p>可以分为</p>
+<p>0101 1110 1010 1010 1001 0101</p>
+<ul>
+<li>然后按照二进制规律转换</li>
+</ul>
+<p>分别对应5 e a a 9 5</p>
+<h3 id="十六进制-gt-gt-二进制"><a href="#十六进制-gt-gt-二进制" class="headerlink" title="十六进制&gt;&gt;二进制"></a>十六进制&gt;&gt;二进制</h3><p>9 a 8 f 7</p>
+<ul>
+<li>直接把每位数字对应的数进行转换,使用二进制规律8,4,2,1</li>
+</ul>
+<p>分别对应,也是从右往左</p>
+<p>1001 1010 1000 1111 0111</p>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="八进制和十六进制"><a href="#八进制和十六进制" class="headerlink" title="八进制和十六进制"></a>八进制和十六进制</h2><p>我们要把欲转换的数字转换为二进制,然后再进行转换</p>
+<h3 id="八进制-gt-gt-十六进制"><a href="#八进制-gt-gt-十六进制" class="headerlink" title="八进制&gt;&gt;十六进制"></a>八进制&gt;&gt;十六进制</h3><p>37231</p>
+<ul>
+<li>转为二进制</li>
+</ul>
+<p>11111010011001</p>
+<ul>
+<li>转为十六进制,分组每组4位</li>
+</ul>
+<p>0011 1110 1001 1001</p>
+<p>对应的数为3 e 9 9</p>
+<h3 id="十六进制-gt-gt-八进制"><a href="#十六进制-gt-gt-八进制" class="headerlink" title="十六进制&gt;&gt;八进制"></a>十六进制&gt;&gt;八进制</h3><p>8fc6</p>
+<ul>
+<li>转为二进制</li>
+</ul>
+<p>1000111111000110</p>
+<ul>
+<li>转为八进制,分3组每组3位</li>
+</ul>
+<p>001 000 111 111 000 110</p>
+<p>对应的数为:1 0 7 7 0 6</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.laijiahao.cn">赖佳豪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.laijiahao.cn/posts/cbc9fd14/">https://www.laijiahao.cn/posts/cbc9fd14/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.laijiahao.cn" target="_blank">Huanhao's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BF%9B%E5%88%B6/">进制</a></div><div class="post_share"><div class="social-share" data-image="https://img.api.tianli0.top" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-01-41.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-01-41.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-04-57.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-04-57.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/bcd1ce9e/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.api.tianli0.top" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【系统篇】ArchLinux系统安装</div></div></a></div><div class="next-post pull-right"><a href="/posts/f8687f41/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.api.tianli0.top" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【pic+js+gh】免费高速图床方案</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">赖佳豪</div><div class="author-info__description">一个萌新分享自己仅存的技术的地方</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/67268239"><i class="iconfont icon-bilibili"></i><span>关注</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/kjhuanhao" target="_blank" title="Github"><i class="fa-fw fab fa-github"></i></a><a class="social-icon" href="mailto:2077780946@qq.com" target="_blank" title="Email"><i class="fa-fw far fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">换了一个博客主题了</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">1.</span> <span class="toc-text">二进制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%B8%BA%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="toc-number">1.1.</span> <span class="toc-text">二进制转为十进制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6"><span class="toc-number">2.</span> <span class="toc-text">八进制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="toc-number">2.1.</span> <span class="toc-text">八进制转十进制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6"><span class="toc-number">3.</span> <span class="toc-text">十六进制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="toc-number">3.1.</span> <span class="toc-text">十六进制转十进制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%ACX%E8%BF%9B%E5%88%B6"><span class="toc-number">4.</span> <span class="toc-text">十进制转X进制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6-1"><span class="toc-number">4.1.</span> <span class="toc-text">二进制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6-1"><span class="toc-number">4.2.</span> <span class="toc-text">八进制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6-1"><span class="toc-number">4.3.</span> <span class="toc-text">十六进制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6-%E5%85%AB%E8%BF%9B%E5%88%B6-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text">二进制,八进制,十六进制之间的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%92%8C%E5%85%AB%E8%BF%9B%E5%88%B6"><span class="toc-number">5.1.</span> <span class="toc-text">二进制和八进制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6-gt-gt-%E5%85%AB%E8%BF%9B%E5%88%B6"><span class="toc-number">5.1.1.</span> <span class="toc-text">二进制&gt;&gt;八进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6-gt-gt-%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">5.1.2.</span> <span class="toc-text">八进制&gt;&gt;二进制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%92%8C%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6"><span class="toc-number">5.2.</span> <span class="toc-text">二进制和十六进制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6-gt-gt-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6"><span class="toc-number">5.2.1.</span> <span class="toc-text">二进制&gt;&gt;十六进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6-gt-gt-%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">5.2.2.</span> <span class="toc-text">十六进制&gt;&gt;二进制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-number">6.</span> <span class="toc-text">扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6%E5%92%8C%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6"><span class="toc-number">6.1.</span> <span class="toc-text">八进制和十六进制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6-gt-gt-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6"><span class="toc-number">6.1.1.</span> <span class="toc-text">八进制&gt;&gt;十六进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6-gt-gt-%E5%85%AB%E8%BF%9B%E5%88%B6"><span class="toc-number">6.1.2.</span> <span class="toc-text">十六进制&gt;&gt;八进制</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/8418bcbe/" title="win11拨号问题解决方案">win11拨号问题解决方案</a><time datetime="2022-09-16T05:29:19.000Z" title="发表于 2022-09-16 13:29:19">2022-09-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d37b869a/" title="python使用cookie免验证登入">python使用cookie免验证登入</a><time datetime="2022-09-12T05:35:18.000Z" title="发表于 2022-09-12 13:35:18">2022-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/576f6fe5/" title="爬取电影天堂2022榜单的下载地址">爬取电影天堂2022榜单的下载地址</a><time datetime="2022-09-09T14:20:45.000Z" title="发表于 2022-09-09 22:20:45">2022-09-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/85ba1d4c/" title="爬取豆瓣电影榜练习">爬取豆瓣电影榜练习</a><time datetime="2022-09-09T11:26:11.000Z" title="发表于 2022-09-09 19:26:11">2022-09-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/171c2705/" title="twikoo评论设置">twikoo评论设置</a><time datetime="2022-09-09T02:46:19.000Z" title="发表于 2022-09-09 10:46:19">2022-09-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img.api.tianli0.top')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2022 By 赖佳豪</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank"href="https://hexo.io/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo"title="博客框架为Hexo"alt="img"></a><a style="margin-inline:5px"target="_blank"href="https://butterfly.js.org/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender"title="主题采用butterfly"alt="img"></a><a style="margin-inline:5px"target="_blank"href="https://now.sh"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&logo=Vercel"title="本站使用部署于Vercel"alt="img"></a><a style="margin-inline:5px"target="_blank"href="https://github.com/TIANLI0/BF-OK"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Theme-d021d6?style=flat&logo=GitHub"title="本站项目由Gtihub托管"alt="img"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris"alt="img"title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a> <a style="margin-inline:5px"target="_blank"href="https://tianli-blog.club/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/CDN-Tianli-important?style=flat&logo=KeyCDN"title="感谢Tianli-CDN"alt="img"></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twc.laijiahao.cn/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twc.laijiahao.cn/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="/js/fun.js"></script><script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script><script src="https://img1.tianli0.top/statistic.js"></script><script src="https://cdn1.tianli0.top/npm/swiper/swiper-bundle.min.js"></script><script src="https://cdn1.tianli0.top/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><script src="/js/moments.js"></script><script src="/js/kernel.js"></script><script defer src="https://cdn1.tianli0.top/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer data-pjax src="/js/wow_init.js"></script><script src="//at.alicdn.com/t/c/font_3639040_xhoyfzkmr8c.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script></div><!-- hexo injector body_end start --><script data-pjax>function history_calendar_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-history"><div class="card-content"><div class="item-headline"><i class="fas fa-clock fa-spin"></i><span>那年今日</span></div><div id="history-baidu" style="height: 100px;overflow: hidden"><div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%"><div class="swiper-wrapper" id="history_container_wrapper" style="height:20px"></div></div></div></div>';
+                console.log('已挂载history_calendar')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            history_calendar_injector_config()
+        } </script><script data-pjax  src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><!-- hexo injector body_end end --></body></html>

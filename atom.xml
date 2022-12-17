@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Huanhao&#39;s blog</title>
+  
+  
+  <link href="https://www.laijiahao.cn/atom.xml" rel="self"/>
+  
+  <link href="https://www.laijiahao.cn/"/>
+  <updated>2022-12-17T04:04:43.364Z</updated>
+  <id>https://www.laijiahao.cn/</id>
+  
+  <author>
+    <name>赖佳豪</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win11拨号问题解决方案</title>
+    <link href="https://www.laijiahao.cn/posts/8418bcbe/"/>
+    <id>https://www.laijiahao.cn/posts/8418bcbe/</id>
+    <published>2022-09-16T05:29:19.000Z</published>
+    <updated>2022-12-17T04:04:43.364Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python使用cookie免验证登入</title>
+    <link href="https://www.laijiahao.cn/posts/d37b869a/"/>
+    <id>https://www.laijiahao.cn/posts/d37b869a/</id>
+    <published>2022-09-12T05:35:18.000Z</published>
+    <updated>2022-12-17T04:04:43.362Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;获取cookies&quot;&gt;&lt;a href=&quot;#获取cookies&quot; class=&quot;headerlink&quot; title=&quot;获取cookies&quot;&gt;&lt;/a&gt;获取cookies&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.laijiahao.cn/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://www.laijiahao.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬取电影天堂2022榜单的下载地址</title>
+    <link href="https://www.laijiahao.cn/posts/576f6fe5/"/>
+    <id>https://www.laijiahao.cn/posts/576f6fe5/</id>
+    <published>2022-09-09T14:20:45.000Z</published>
+    <updated>2022-12-17T04:04:43.367Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;去除网页的安全验证&quot;&gt;&lt;a href=&quot;#去除网页的安全验证&quot; class=&quot;headerlink&quot; title=&quot;去除网页的安全验证&quot;&gt;&lt;/a&gt;去除网页的安全验证&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>爬取豆瓣电影榜练习</title>
+    <link href="https://www.laijiahao.cn/posts/85ba1d4c/"/>
+    <id>https://www.laijiahao.cn/posts/85ba1d4c/</id>
+    <published>2022-09-09T11:26:11.000Z</published>
+    <updated>2022-12-17T04:04:43.367Z</updated>
+    
+    
+    <summary type="html">爬取豆瓣练习</summary>
+    
+    
+    
+    <category term="Python" scheme="https://www.laijiahao.cn/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://www.laijiahao.cn/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>twikoo评论设置</title>
+    <link href="https://www.laijiahao.cn/posts/171c2705/"/>
+    <id>https://www.laijiahao.cn/posts/171c2705/</id>
+    <published>2022-09-09T02:46:19.000Z</published>
+    <updated>2022-12-17T04:04:43.363Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Twikoo 分为云函数和前端两部分，部署时请注意保持二者版本一致。云函数部署有 5 种方式，一键部署、手动部署、命令行部署、Vercel 部署和私有部署。这篇文章是使用&lt;code&gt;vercel&lt;/code&gt;进行部署&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="hexo" scheme="https://www.laijiahao.cn/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://www.laijiahao.cn/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="https://www.laijiahao.cn/posts/2f57a694/"/>
+    <id>https://www.laijiahao.cn/posts/2f57a694/</id>
+    <published>2022-09-08T08:47:35.000Z</published>
+    <updated>2022-12-17T04:04:43.367Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近在学爬虫，刚好学到&lt;code&gt;Re&lt;/code&gt;模块，于是写个文章记录一下正则表达式&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Python" scheme="https://www.laijiahao.cn/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【电脑小白】如何安装想要的软件</title>
+    <link href="https://www.laijiahao.cn/posts/9280c944/"/>
+    <id>https://www.laijiahao.cn/posts/9280c944/</id>
+    <published>2022-09-08T02:24:04.000Z</published>
+    <updated>2022-12-17T04:04:43.366Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决github访问问题</title>
+    <link href="https://www.laijiahao.cn/posts/c5465179/"/>
+    <id>https://www.laijiahao.cn/posts/c5465179/</id>
+    <published>2022-09-06T01:47:35.000Z</published>
+    <updated>2022-12-17T04:04:43.368Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;访问Github查找代码项目已经成为了我的日常，虽然自己有小飞机，但不是很喜欢一直开着，于是我找到了一个工具&lt;code&gt;dev-sidecar&lt;/code&gt;，它具有如下功能特性，同时解决了我在git bash当中使用npm的超时痛点，更激动的还可以让&lt;code&gt;obsidian&lt;/code&gt;的插件市场可以正常地访问和安装插件，本教程使用于所有系统&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dns优选（解决***污染问题）&lt;/li&gt;
+&lt;li&gt;请求拦截&lt;/li&gt;
+&lt;li&gt;github加速&lt;/li&gt;
+&lt;li&gt;Stack Overflow 加速&lt;/li&gt;
+&lt;li&gt;npm加速&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="github" scheme="https://www.laijiahao.cn/categories/github/"/>
+    
+    
+    <category term="github" scheme="https://www.laijiahao.cn/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两个稳定的图床</title>
+    <link href="https://www.laijiahao.cn/posts/abd47b25/"/>
+    <id>https://www.laijiahao.cn/posts/abd47b25/</id>
+    <published>2022-09-03T03:46:23.000Z</published>
+    <updated>2022-12-17T04:04:43.366Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;比jsdelivr更加稳定的图床方案（国内图床）&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决win11一些小毛病</title>
+    <link href="https://www.laijiahao.cn/posts/1d5af885/"/>
+    <id>https://www.laijiahao.cn/posts/1d5af885/</id>
+    <published>2022-08-30T15:43:56.000Z</published>
+    <updated>2022-12-17T04:04:43.368Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一个改变任务栏的软件&quot;&gt;&lt;a href=&quot;#一个改变任务栏的软件&quot; class=&quot;headerlink&quot; title=&quot;一个改变任务栏的软件&quot;&gt;&lt;/a&gt;一个改变任务栏的软件&lt;/h2&gt;&lt;img src=&quot;https://s1.vika.cn/space/2022/08/30/67ac687236464e06ad196972383869f5&quot; style=&quot;zoom: 50%;&quot; /&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>开源的阅读APP</title>
+    <link href="https://www.laijiahao.cn/posts/7a78f212/"/>
+    <id>https://www.laijiahao.cn/posts/7a78f212/</id>
+    <published>2022-08-25T14:31:40.000Z</published>
+    <updated>2022-12-17T04:04:43.367Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;介绍一个开源的阅读软件，github地址：&lt;a href=&quot;https://github.com/gedoor/legado&quot;&gt;https://github.com/gedoor/legado&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官网：&lt;a href=&quot;https://gedoor.github.io/&quot;&gt;https://gedoor.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;特点就是可以导入书源，做到无广告阅读全网小说&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【博客搭建】博客搭建命令集合</title>
+    <link href="https://www.laijiahao.cn/posts/d80edc80/"/>
+    <id>https://www.laijiahao.cn/posts/d80edc80/</id>
+    <published>2022-08-25T10:44:18.000Z</published>
+    <updated>2022-12-17T04:04:43.366Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;博客展示：&lt;/p&gt;
+&lt;p&gt;volantis: &lt;a href=&quot;https://volantis.js.org/&quot;&gt;https://volantis.js.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;butterfly: &lt;a href=&quot;https://butterfly.js.org/&quot;&gt;https://butterfly.js.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;keep: &lt;a href=&quot;https://xpoet.cn/&quot;&gt;https://xpoet.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Aurora: &lt;a href=&quot;https://tridiamond.tech/&quot;&gt;https://tridiamond.tech/&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>第一把客制化键盘</title>
+    <link href="https://www.laijiahao.cn/posts/49a056da/"/>
+    <id>https://www.laijiahao.cn/posts/49a056da/</id>
+    <published>2022-08-10T04:20:33.000Z</published>
+    <updated>2022-12-17T04:04:43.368Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;https://s2.loli.net/2022/08/17/RTgOuIcA57fWGYm.jpg&quot; style=&quot;zoom: 20%;&quot; /&gt;</summary>
+    
+    
+    
+    
+    <category term="键盘客制化" scheme="https://www.laijiahao.cn/tags/%E9%94%AE%E7%9B%98%E5%AE%A2%E5%88%B6%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo主题进阶</title>
+    <link href="https://www.laijiahao.cn/posts/75a5de1e/"/>
+    <id>https://www.laijiahao.cn/posts/75a5de1e/</id>
+    <published>2022-08-01T13:38:25.000Z</published>
+    <updated>2022-12-17T04:04:43.365Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本篇文章将带领你配置一个心仪的主题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ps：不是所有的主题设置都是一样的，但也存在普遍性&lt;/p&gt;
+&lt;p&gt;本文章将会使用比较复杂的&lt;a href=&quot;https://volantis.js.org/&quot;&gt;Volantis&lt;/a&gt;主题，从而达到较高的普遍性，通过配置这种复杂的主题，让大家可以适应几乎所有主题&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>七天入门电脑基础知识课程介绍</title>
+    <link href="https://www.laijiahao.cn/posts/kc/"/>
+    <id>https://www.laijiahao.cn/posts/kc/</id>
+    <published>2022-08-01T06:44:06.000Z</published>
+    <updated>2022-12-17T04:04:43.358Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;免费通知&quot;&gt;&lt;a href=&quot;#免费通知&quot; class=&quot;headerlink&quot; title=&quot;免费通知&quot;&gt;&lt;/a&gt;免费通知&lt;/h2&gt;&lt;p&gt;这个课程是我自己出的一个七天入门电脑基础知识课程，面对准大一新生或者电脑小白，课程会围绕电脑基础、浏览器设置、电子笔记软件、提高效率的一系列操作进行讲解，原本是收费，现在为爱发电了，免费分享给大家！&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>K50刷机记录</title>
+    <link href="https://www.laijiahao.cn/posts/79bd3336/"/>
+    <id>https://www.laijiahao.cn/posts/79bd3336/</id>
+    <published>2022-07-17T06:44:06.000Z</published>
+    <updated>2022-12-17T04:04:43.357Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;文章作者：huanhao&lt;/p&gt;
+&lt;p&gt;作者站点：&lt;a href=&quot;https://laijiahao.cn/&quot;&gt;https://laijiahao.cn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;B站主页：&lt;a href=&quot;https://space.bilibili.com/67268239&quot;&gt;https://space.bilibili.com/67268239&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本篇文章&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="刷机" scheme="https://www.laijiahao.cn/categories/%E5%88%B7%E6%9C%BA/"/>
+    
+    
+    <category term="刷机" scheme="https://www.laijiahao.cn/tags/%E5%88%B7%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【基础重制篇】搭建hexo博客（一）</title>
+    <link href="https://www.laijiahao.cn/posts/a1047ed6/"/>
+    <id>https://www.laijiahao.cn/posts/a1047ed6/</id>
+    <published>2022-06-29T08:10:54.000Z</published>
+    <updated>2022-12-17T04:04:43.362Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;你是否想拥有属于自己的博客？你是否无奈与自己不会写网站而烦恼？&lt;/p&gt;
+&lt;p&gt;不要担心，本系列教程将会实现你白嫖的愿望，连服务器都不需要买，就算没有任何编程基础也可以学会的搭建博客教程&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="hexo" scheme="https://www.laijiahao.cn/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://www.laijiahao.cn/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>obsdian创建个人图书管理库进阶</title>
+    <link href="https://www.laijiahao.cn/posts/194dd0c0/"/>
+    <id>https://www.laijiahao.cn/posts/194dd0c0/</id>
+    <published>2022-06-22T10:29:57.000Z</published>
+    <updated>2022-12-17T04:04:43.360Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在上文谈论到如何创建个人管理库当中，我们实现了一键创建图书页，本篇本章教你如何创建一个图书管理页面，展示我们的所有书籍信息&lt;br&gt;实现效果：&lt;br&gt;&lt;img src=&quot;https://cdn.staticaly.com/gh/kjhuanhao/huanhaocdn@master/20220622/2022-06-22_20-42-22.bpqjz2zcic8.webp&quot; alt=&quot;2022-06-22_20-42-22&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>obsidian创建个人图书管理库</title>
+    <link href="https://www.laijiahao.cn/posts/6478477c/"/>
+    <id>https://www.laijiahao.cn/posts/6478477c/</id>
+    <published>2022-06-22T06:28:55.000Z</published>
+    <updated>2022-12-17T04:04:43.360Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在学习obsidian的过程中，想要把一直没有实现的图书管理功能实现，于是这样的一个教程&lt;/p&gt;
+&lt;p&gt;最终效果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.staticaly.com/gh/kjhuanhao/huanhaocdn@master/20220622/2022-06-22_18-38-43.m4e5jrl0hto.webp&quot; alt=&quot;2022-06-22_18-38-43&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="obsidian" scheme="https://www.laijiahao.cn/tags/obsidian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>obsidian的使用技巧</title>
+    <link href="https://www.laijiahao.cn/posts/e0f1c194/"/>
+    <id>https://www.laijiahao.cn/posts/e0f1c194/</id>
+    <published>2022-06-22T04:25:45.000Z</published>
+    <updated>2022-12-17T04:04:43.361Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;双链&quot;&gt;&lt;a href=&quot;#双链&quot; class=&quot;headerlink&quot; title=&quot;双链&quot;&gt;&lt;/a&gt;双链&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;入链&lt;br&gt;又被成为反向链接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;出链&lt;br&gt;就像思维导图一样，一个分知识点，链接了其他知识点&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>
