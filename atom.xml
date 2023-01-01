@@ -6,7 +6,7 @@
   <link href="https://www.laijiahao.cn/atom.xml" rel="self"/>
   
   <link href="https://www.laijiahao.cn/"/>
-  <updated>2022-12-17T04:04:43.364Z</updated>
+  <updated>2023-01-01T16:20:37.175Z</updated>
   <id>https://www.laijiahao.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>云函数和服务器部署chatgpt接口</title>
+    <link href="https://www.laijiahao.cn/posts/bb8fab97/"/>
+    <id>https://www.laijiahao.cn/posts/bb8fab97/</id>
+    <published>2023-01-01T16:20:00.000Z</published>
+    <updated>2023-01-01T16:20:37.175Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;云函数&quot;&gt;&lt;a href=&quot;#云函数&quot; class=&quot;headerlink&quot; title=&quot;云函数&quot;&gt;&lt;/a&gt;云函数&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;该项目基于：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="chatgpt" scheme="https://www.laijiahao.cn/categories/chatgpt/"/>
+    
+    
+    <category term="chatgpt" scheme="https://www.laijiahao.cn/tags/chatgpt/"/>
+    
+  </entry>
   
   <entry>
     <title>win11拨号问题解决方案</title>
@@ -367,24 +393,6 @@
     
     
     <category term="obsidian" scheme="https://www.laijiahao.cn/tags/obsidian/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>obsidian的使用技巧</title>
-    <link href="https://www.laijiahao.cn/posts/e0f1c194/"/>
-    <id>https://www.laijiahao.cn/posts/e0f1c194/</id>
-    <published>2022-06-22T04:25:45.000Z</published>
-    <updated>2022-12-17T04:04:43.361Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;双链&quot;&gt;&lt;a href=&quot;#双链&quot; class=&quot;headerlink&quot; title=&quot;双链&quot;&gt;&lt;/a&gt;双链&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;入链&lt;br&gt;又被成为反向链接&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;出链&lt;br&gt;就像思维导图一样，一个分知识点，链接了其他知识点&lt;/p&gt;</summary>
-    
-    
-    
     
   </entry>
   

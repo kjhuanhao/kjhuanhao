@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>云函数和服务器部署chatgpt接口</title>
+      <link href="/posts/bb8fab97/"/>
+      <url>/posts/bb8fab97/</url>
+      
+        <content type="html"><![CDATA[<h2 id="云函数"><a href="#云函数" class="headerlink" title="云函数"></a>云函数</h2><blockquote><p>该项目基于：<a href="https://github.com/kjhuanhao/chatgpt-magic-plug">https://github.com/kjhuanhao/chatgpt-magic-plug</a> 修改而来的简单版本，只提供基础功能，其他功能不提供，如果需要该项目的丰富功能，可以看下面的服务器部署</p></blockquote><ol><li>拥有一个阿里云账号 <a href="https://cn.aliyun.com/">https://cn.aliyun.com/</a></li><li>开通函数计算FC<a href="https://www.aliyun.com/product/fc">https://www.aliyun.com/product/fc</a></li><li>首次使用可以免费购买资源包，优惠期限是1年，而且后续使用是按量付费，也不会有多少费用</li></ol><p><img src="https://s1.vika.cn/space/2023/01/01/5f245c85e0784bb5a6256a87428ef32a"></p><ol start="4"><li>拥有一个<code>gitee</code>账号 <a href="https://gitee.com/">https://gitee.com/</a> （<code>github</code>也可以）</li><li>导入 仓库：<a href="https://github.com/kjhuanhao/aliyun-chatgpt">https://github.com/kjhuanhao/aliyun-chatgpt</a></li></ol><p><img src="https://s1.vika.cn/space/2023/01/01/e78db79c314447d0ac498a40774d44af"></p><ol start="6"><li>修改成自己的key，max_tokens也可以适当进行修改</li></ol><p><img src="https://s1.vika.cn/space/2023/01/01/3d0e51fda2b14ef1bd435cc73893bf2f"></p><ol start="7"><li>打开函数计算FC控制台–点击应用–点击通过仓库导入应用–授权你的gitee账号–选择我们刚刚导入的仓库</li></ol><p><img src="https://s1.vika.cn/space/2023/01/01/7d1eefa508644545adae39a5e571d882"></p><ol start="8"><li>之后点击下面的创建，等待部署完成即可</li></ol><blockquote><p>如果部署失败，可以点击重新部署（偶尔会有部署失败的情况）</p></blockquote><h3 id="接口地址"><a href="#接口地址" class="headerlink" title="接口地址"></a>接口地址</h3><p>返回到控制台界面–点击应用–鼠标悬停在访问域名上就可以看到一个地址，这个就是接口地址了</p><p><img src="https://s1.vika.cn/space/2023/01/02/2210303393f644f89a0526e94467cba1"></p><p>如果之后你要修改key，直接修改项目即可，云函数会自动重新部署的</p><h2 id="服务器部署ubuntu为例"><a href="#服务器部署ubuntu为例" class="headerlink" title="服务器部署ubuntu为例"></a>服务器部署ubuntu为例</h2><ol><li>安装相关服务器依赖</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install redis pandoc</span><br></pre></td></tr></table></figure><ol start="2"><li>相关的python依赖</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install  gunicorn flask flask_cors flask_limiter pypandoc</span><br></pre></td></tr></table></figure><ol start="3"><li>拥有一个openai的账号，然后获取keys<a href="https://beta.openai.com/account/api-keys">https://beta.openai.com/account/api-keys</a></li><li>fork仓库：<a href="https://github.com/kjhuanhao/chatgpt-magic-plug">https://github.com/kjhuanhao/chatgpt-magic-plug</a></li><li>修改相关配置</li></ol><p><img src="https://s2.loli.net/2023/01/01/u8VNEe3dxcOLla9.jpg"></p><ol start="5"><li>使用git命令，克隆你的项目</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 项目地址</span><br></pre></td></tr></table></figure><ol start="6"><li>进入项目目录，然后启动接口(本项目默认端口号为2052)</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gunicorn -w 2 -b 0.0.0.0:2052 app:app</span><br></pre></td></tr></table></figure><h3 id="接口地址-1"><a href="#接口地址-1" class="headerlink" title="接口地址"></a>接口地址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://服务器Ip:2052/get_answer</span><br></pre></td></tr></table></figure><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>创建openai的账号需要魔法上网</p><h3 id="如何结束进程"><a href="#如何结束进程" class="headerlink" title="如何结束进程"></a>如何结束进程</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i:2052</span><br><span class="line">sudo kill -9 进程</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> chatgpt </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> chatgpt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>win11拨号问题解决方案</title>
       <link href="/posts/8418bcbe/"/>
       <url>/posts/8418bcbe/</url>
