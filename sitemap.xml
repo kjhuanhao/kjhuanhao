@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.laijiahao.cn/posts/476a02c8/</loc>
+    
+    <lastmod>2023-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.laijiahao.cn/posts/bb8fab97/</loc>
     
     <lastmod>2023-01-02</lastmod>
@@ -740,6 +749,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://www.laijiahao.cn/tags/openai/</loc>
+    <lastmod>2023-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -891,6 +907,13 @@
   
   <url>
     <loc>https://www.laijiahao.cn/categories/chatgpt/</loc>
+    <lastmod>2023-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.laijiahao.cn/categories/openai/</loc>
     <lastmod>2023-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

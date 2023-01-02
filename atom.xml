@@ -6,7 +6,7 @@
   <link href="https://www.laijiahao.cn/atom.xml" rel="self"/>
   
   <link href="https://www.laijiahao.cn/"/>
-  <updated>2023-01-02T05:41:17.033Z</updated>
+  <updated>2023-01-02T06:08:37.959Z</updated>
   <id>https://www.laijiahao.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>openai注册</title>
+    <link href="https://www.laijiahao.cn/posts/476a02c8/"/>
+    <id>https://www.laijiahao.cn/posts/476a02c8/</id>
+    <published>2023-01-02T06:07:50.000Z</published>
+    <updated>2023-01-02T06:08:37.959Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;虚拟手机号&quot;&gt;&lt;a href=&quot;#虚拟手机号&quot; class=&quot;headerlink&quot; title=&quot;虚拟手机号&quot;&gt;&lt;/a&gt;虚拟手机号&lt;/h2&gt;&lt;p&gt;注册虚拟手机号网站：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="openai" scheme="https://www.laijiahao.cn/categories/openai/"/>
+    
+    
+    <category term="openai" scheme="https://www.laijiahao.cn/tags/openai/"/>
+    
+  </entry>
   
   <entry>
     <title>云函数和服务器部署chatgpt接口</title>
@@ -374,25 +399,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>obsidian创建个人图书管理库</title>
-    <link href="https://www.laijiahao.cn/posts/6478477c/"/>
-    <id>https://www.laijiahao.cn/posts/6478477c/</id>
-    <published>2022-06-22T06:28:55.000Z</published>
-    <updated>2022-12-17T04:04:43.360Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在学习obsidian的过程中，想要把一直没有实现的图书管理功能实现，于是这样的一个教程&lt;/p&gt;
-&lt;p&gt;最终效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cdn.staticaly.com/gh/kjhuanhao/huanhaocdn@master/20220622/2022-06-22_18-38-43.m4e5jrl0hto.webp&quot; alt=&quot;2022-06-22_18-38-43&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="obsidian" scheme="https://www.laijiahao.cn/tags/obsidian/"/>
     
   </entry>
   
