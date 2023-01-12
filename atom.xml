@@ -6,7 +6,7 @@
   <link href="https://www.laijiahao.cn/atom.xml" rel="self"/>
   
   <link href="https://www.laijiahao.cn/"/>
-  <updated>2023-01-02T06:17:45.818Z</updated>
+  <updated>2023-01-12T14:07:33.620Z</updated>
   <id>https://www.laijiahao.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MYSQL安装</title>
+    <link href="https://www.laijiahao.cn/posts/c464928a/"/>
+    <id>https://www.laijiahao.cn/posts/c464928a/</id>
+    <published>2023-01-12T14:07:01.000Z</published>
+    <updated>2023-01-12T14:07:33.620Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;安装环境:Win10 64位&lt;/strong&gt;&lt;br&gt;**软件版本:MySQL 5.7.24 **&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;一、下载&quot;&gt;&lt;a href=&quot;#一、下载&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MYSQL" scheme="https://www.laijiahao.cn/categories/MYSQL/"/>
+    
+    
+    <category term="MYSQL" scheme="https://www.laijiahao.cn/tags/MYSQL/"/>
+    
+  </entry>
   
   <entry>
     <title>openai注册</title>
@@ -384,21 +412,6 @@
     
     
     <category term="hexo" scheme="https://www.laijiahao.cn/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>obsdian创建个人图书管理库进阶</title>
-    <link href="https://www.laijiahao.cn/posts/194dd0c0/"/>
-    <id>https://www.laijiahao.cn/posts/194dd0c0/</id>
-    <published>2022-06-22T10:29:57.000Z</published>
-    <updated>2022-12-17T04:04:43.360Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在上文谈论到如何创建个人管理库当中，我们实现了一键创建图书页，本篇本章教你如何创建一个图书管理页面，展示我们的所有书籍信息&lt;br&gt;实现效果：&lt;br&gt;&lt;img src=&quot;https://cdn.staticaly.com/gh/kjhuanhao/huanhaocdn@master/20220622/2022-06-22_20-42-22.bpqjz2zcic8.webp&quot; alt=&quot;2022-06-22_20-42-22&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
     
   </entry>
   

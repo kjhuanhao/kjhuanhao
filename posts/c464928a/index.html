@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MYSQL安装 | Huanhao's blog</title><meta name="keywords" content="MYSQL"><meta name="author" content="赖佳豪"><meta name="copyright" content="赖佳豪"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="安装环境:Win10 64位**软件版本:MySQL 5.7.24 **  一、下载点开下面的链接：https:&#x2F;&#x2F;downloads.mysql.com&#x2F;archives&#x2F;community&#x2F;  选择选择和自己系统位数相对应的版本点击右边的Download  二、安装(解压)下载完成后我们得到的是一个压缩包，将其解压，我们就可以得到MySQL 5.7.24的软件本体了(就是一个文件夹)，我们可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYSQL安装">
+<meta property="og:url" content="https://www.laijiahao.cn/posts/c464928a/index.html">
+<meta property="og:site_name" content="Huanhao&#39;s blog">
+<meta property="og:description" content="安装环境:Win10 64位**软件版本:MySQL 5.7.24 **  一、下载点开下面的链接：https:&#x2F;&#x2F;downloads.mysql.com&#x2F;archives&#x2F;community&#x2F;  选择选择和自己系统位数相对应的版本点击右边的Download  二、安装(解压)下载完成后我们得到的是一个压缩包，将其解压，我们就可以得到MySQL 5.7.24的软件本体了(就是一个文件夹)，我们可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.api.tianli0.top/">
+<meta property="article:published_time" content="2023-01-12T14:07:01.000Z">
+<meta property="article:modified_time" content="2023-01-12T14:07:33.620Z">
+<meta property="article:author" content="赖佳豪">
+<meta property="article:tag" content="MYSQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.api.tianli0.top/"><link rel="shortcut icon" href="https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd"><link rel="canonical" href="https://www.laijiahao.cn/posts/c464928a/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?af34a7adbaad7c055d0650cf9f19fb2f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":250,"position":"top","messagePrev":"此文章已经有","messageNext":"天没有更新了，某些内容或许已经过时了，如需要技术支持，请在评论区留言所需问题！"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MYSQL安装',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-12 22:07:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://img1.tianli0.top/copyright.css"><link rel="stylesheet" href="https://img1.tianli0.top/background.css"><link rel="stylesheet" href="https://img1.tianli0.top/expand.css"><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3639040_xhoyfzkmr8c.css"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/animate.css@4.1.1/animate.min.css" media="defer" onload="this.media='all'"><link rel="preconnect" href="https://s1.hdslb.com/"><link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" media="all" onload="this.media='all'"><link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/medium.css" media="all" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Huanhao's blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shouye"></use></svg><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce"></use></svg><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shiyanshi"></use></svg><span> 实验室</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://cdn1.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-SCDNanquanjiasu"></use></svg><span> JSD-CDN</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://img.api.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qiehuan"></use></svg><span> 随机动漫壁纸</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://reference.laijiahao.cn/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bianqian"></use></svg><span> 速查手册</span></a></li><li><a class="site-page child" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiaoxi"></use></svg><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gerenziliao"></use></svg><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-more"></use></svg><span> 更多</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://s2.loli.net/2022/08/17/HgexRCWtpQf1K8m.png"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-beifen-xiaotubiao_food-mifan"></use></svg><span> 外卖领卷</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://vika.cn/share/shrqFcNPBiy0g2BUFqMdC/dstr3siQvlcG3yLLmd/viwrK7SyW9buj"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 软件推荐</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.api.tianli0.top')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Huanhao's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shouye"></use></svg><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce"></use></svg><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shiyanshi"></use></svg><span> 实验室</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://cdn1.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-SCDNanquanjiasu"></use></svg><span> JSD-CDN</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://img.api.tianli0.top"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qiehuan"></use></svg><span> 随机动漫壁纸</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://reference.laijiahao.cn/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bianqian"></use></svg><span> 速查手册</span></a></li><li><a class="site-page child" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiaoxi"></use></svg><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gerenziliao"></use></svg><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-more"></use></svg><span> 更多</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://s2.loli.net/2022/08/17/HgexRCWtpQf1K8m.png"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-beifen-xiaotubiao_food-mifan"></use></svg><span> 外卖领卷</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://vika.cn/share/shrqFcNPBiy0g2BUFqMdC/dstr3siQvlcG3yLLmd/viwrK7SyW9buj"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliaofenxiang"></use></svg><span> 软件推荐</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MYSQL安装</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-12T14:07:01.000Z" title="发表于 2023-01-12 22:07:01">2023-01-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-12T14:07:33.620Z" title="更新于 2023-01-12 22:07:33">2023-01-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MYSQL/">MYSQL</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">964</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="MYSQL安装"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p><strong>安装环境:Win10 64位</strong><br>**软件版本:MySQL 5.7.24 **</p>
+</blockquote>
+<h2 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h2><p>点开下面的链接：<br><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/ecc84c96beda4aa6b3509c8bb0ea813a" alt="image-20210404200055449"></p>
+<p>选择选择和自己<strong>系统位数</strong>相对应的版本点击右边的<code>Download</code></p>
+<hr>
+<h2 id="二、安装-解压"><a href="#二、安装-解压" class="headerlink" title="二、安装(解压)"></a>二、安装(解压)</h2><p>下载完成后我们得到的是一个压缩包，将其解压，我们就可以得到MySQL 5.7.24的软件本体了(就是一个文件夹)，我们可以把它放在你想安装的位置。</p>
+<hr>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/21bafe1385264f6980742727c9ca589d" alt="image-20201109134948046"></p>
+<h2 id="三、配置"><a href="#三、配置" class="headerlink" title="三、配置"></a>三、配置</h2><h3 id="1-添加环境变量"><a href="#1-添加环境变量" class="headerlink" title="1. 添加环境变量"></a>1. 添加环境变量</h3><blockquote>
+<p>环境变量里面有很多选项，这里我们只用到<code>Path</code>这个参数。为什么在初始化的开始要添加环境变量呢？<br>在黑框(即CMD)中输入一个可执行程序的名字，Windows会先在环境变量中的<code>Path</code>所指的路径中寻找一遍，如果找到了就直接执行，没找到就在当前工作目录找，如果还没找到，就报错。我们添加环境变量的目的就是能够在任意一个黑框直接调用MySQL中的相关程序而不用总是修改工作目录，大大简化了操作。</p>
+</blockquote>
+<p>右键<code>此电脑</code>→<code>属性</code>，点击<code>高级系统设置</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/b7ad159ec8b04a2b9db7b864a79b8ff5" alt="img"></p>
+<p>点击<code>环境变量</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/687efe69a1124c2aac01038ba8d7a05e" alt="img"></p>
+<p>在<code>系统变量</code>中新建MYSQL_HOME</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/aca11c523a7744268926360aa8c28b5b" alt="image-20201109140222488"></p>
+<p>在<code>系统变量</code>中找到并<strong>双击</strong><code>Path</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/242f50e167d9422d8f04e16134632ca9" alt="img"></p>
+<p>点击<code>新建</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/c2c5af249d7a49b1940fd7cf30e18e51" alt="image-20201109135248104"></p>
+<p>最后点击确定。</p>
+<p><strong>如何验证是否添加成功？</strong></p>
+<p>右键开始菜单(就是屏幕左下角)，选择<code>命令提示符(管理员)</code>，打开黑框，敲入<code>mysql</code>，回车。<br>如果提示<code>Can&#39;t connect to MySQL server on &#39;localhost&#39;</code>则证明添加成功；<br>如果提示<code>mysql不是内部或外部命令，也不是可运行的程序或批处理文件</code>则表示添加添加失败，请重新检查步骤并重试。</p>
+<h3 id="2-新建配置文件"><a href="#2-新建配置文件" class="headerlink" title="2. 新建配置文件"></a>2. 新建配置文件</h3><p>新建一个文本文件，内容如下：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">[mysql]</span></span><br><span class="line"><span class="attr">default-character-set</span>=<span class="string">utf8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">[mysqld]</span></span><br><span class="line"><span class="attr">character-set-server</span>=<span class="string">utf8</span></span><br><span class="line"><span class="attr">default-storage-engine</span>=<span class="string">INNODB</span></span><br><span class="line"><span class="attr">sql_mode</span>=<span class="string">STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span></span><br></pre></td></tr></table></figure>
+
+<p>文件名叫<code>my.ini</code>，存放在mysql文件的根目录</p>
+<p>上面代码意思就是配置数据库的默认编码集为utf-8和默认存储引擎为INNODB。</p>
+<h3 id="3-初始化MySQL"><a href="#3-初始化MySQL" class="headerlink" title="3. 初始化MySQL"></a>3. 初始化MySQL</h3><p>在刚才的黑框中敲入<code>mysqld --initialize-insecure</code>，回车，稍微等待一会，如果出现没有出现报错信息(如下图)则证明data目录初始化没有问题，此时再查看MySQL目录下已经有data目录生成。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize-insecure</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/6838d205a90c4399a7ed61701284dd7c" alt="image-20201109140955772"></p>
+<p>tips：如果出现如下错误</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/ecb7c0e0e168443ea341340d0dff936d" alt="image-20201109135848054"></p>
+<p>是由于权限不足导致的，去<code>C:\Windows\System32</code> 下以管理员方式运行 cmd.exe</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="A:\BaiduNetdiskDownload\JavaWeb-资料\day01-MySQL基础\day01-MySQL基础\资料\MySQL安装\imgs\image-20201109140423691.png" alt="image-20201109140423691"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/b6ec5c057e5d44eca36fca451af76ee4" alt="image-20201109140001186"></p>
+<h3 id="4-注册MySQL服务"><a href="#4-注册MySQL服务" class="headerlink" title="4. 注册MySQL服务"></a>4. 注册MySQL服务</h3><p>在黑框里敲入<code>mysqld -install</code>，回车。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld -install</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/c9f099a9caba460cb0ae5dabf56a2f3e" alt="image-20201109141325810"></p>
+<p>现在你的计算机上已经安装好了MySQL服务了。</p>
+<p>MySQL服务器</p>
+<h3 id="5-启动MySQL服务"><a href="#5-启动MySQL服务" class="headerlink" title="5. 启动MySQL服务"></a>5. 启动MySQL服务</h3><p>在黑框里敲入<code>net start mysql</code>，回车。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">net start mysql  <span class="comment">// 启动mysql服务</span></span><br><span class="line">    </span><br><span class="line">net stop mysql  <span class="comment">// 停止mysql服务</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/bd98ca64f4d3448cabead5ffdc7a11af" alt="img"></p>
+<h3 id="6-修改默认账户密码"><a href="#6-修改默认账户密码" class="headerlink" title="6. 修改默认账户密码"></a>6. 修改默认账户密码</h3><p>在黑框里敲入<code>mysqladmin -u root password 1234</code>，这里的<code>1234</code>就是指默认管理员(即root账户)的密码，可以自行修改成你喜欢的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root password 1234</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/e802ea1e9e6742058bb63b9f9e03e9f9" alt="img"></p>
+<p><strong>至此，MySQL 5.7 解压版安装完毕！</strong></p>
+<hr>
+<h2 id="四、登录MySQL"><a href="#四、登录MySQL" class="headerlink" title="四、登录MySQL"></a>四、登录MySQL</h2><p>右键开始菜单，选择<code>命令提示符</code>，打开黑框。<br>在黑框中输入，<code>mysql -uroot -p1234</code>，回车，出现下图且左下角为<code>mysql&gt;</code>，则登录成功。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p1234</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/12/b1bcd89bf0da4ce9b239535a6d0346d1" alt="img"></p>
+<p><strong>到这里你就可以开始你的MySQL之旅了！</strong></p>
+<p>退出mysql：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br><span class="line">quit</span><br></pre></td></tr></table></figure>
+
+<p>登陆参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u用户名 -p密码 -h要连接的mysql服务器的ip地址(默认127.0.0.1) -P端口号(默认3306)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<hr>
+<h2 id="五、卸载MySQL"><a href="#五、卸载MySQL" class="headerlink" title="五、卸载MySQL"></a>五、卸载MySQL</h2><p>如果你想卸载MySQL，也很简单。</p>
+<p>右键开始菜单，选择<code>命令提示符(管理员)</code>，打开黑框。</p>
+<ol>
+<li>敲入<code>net stop mysql</code>，回车。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="A:\BaiduNetdiskDownload\JavaWeb-资料\day01-MySQL基础\day01-MySQL基础\资料\MySQL安装\imgs\1556823-20181220222924783-57600848.png" alt="img"></p>
+<ol start="2">
+<li>再敲入<code>mysqld -remove mysql</code>，回车。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld -remove mysql</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="A:\BaiduNetdiskDownload\JavaWeb-资料\day01-MySQL基础\day01-MySQL基础\资料\MySQL安装\imgs\1556823-20181220223025128-587235464.png" alt="img"></p>
+<ol start="3">
+<li>最后删除MySQL目录及相关的环境变量。</li>
+</ol>
+<p><strong>至此，MySQL卸载完成！</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.laijiahao.cn">赖佳豪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.laijiahao.cn/posts/c464928a/">https://www.laijiahao.cn/posts/c464928a/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.laijiahao.cn" target="_blank">Huanhao's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MYSQL/">MYSQL</a></div><div class="post_share"><div class="social-share" data-image="https://img.api.tianli0.top" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-01-41.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-01-41.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-04-57.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/kjhuanhao/blogcdn@master/img/Snipaste_2022-09-08_22-04-57.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/476a02c8/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2023/01/02/0d9dd883c51f4d28aca78febb30c4708" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">openai注册</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">赖佳豪</div><div class="author-info__description">一个萌新分享自己仅存的技术的地方</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/67268239"><i class="iconfont icon-bilibili"></i><span>关注</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/kjhuanhao" target="_blank" title="Github"><i class="fa-fw fab fa-github"></i></a><a class="social-icon" href="mailto:2077780946@qq.com" target="_blank" title="Email"><i class="fa-fw far fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">换了一个博客主题了</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">一、下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85-%E8%A7%A3%E5%8E%8B"><span class="toc-number">2.</span> <span class="toc-text">二、安装(解压)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">三、配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">3.1.</span> <span class="toc-text">1. 添加环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%96%B0%E5%BB%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">2. 新建配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%9D%E5%A7%8B%E5%8C%96MySQL"><span class="toc-number">3.3.</span> <span class="toc-text">3. 初始化MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B3%A8%E5%86%8CMySQL%E6%9C%8D%E5%8A%A1"><span class="toc-number">3.4.</span> <span class="toc-text">4. 注册MySQL服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%90%AF%E5%8A%A8MySQL%E6%9C%8D%E5%8A%A1"><span class="toc-number">3.5.</span> <span class="toc-text">5. 启动MySQL服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-number">3.6.</span> <span class="toc-text">6. 修改默认账户密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%99%BB%E5%BD%95MySQL"><span class="toc-number">4.</span> <span class="toc-text">四、登录MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%8D%B8%E8%BD%BDMySQL"><span class="toc-number">5.</span> <span class="toc-text">五、卸载MySQL</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/c464928a/" title="MYSQL安装">MYSQL安装</a><time datetime="2023-01-12T14:07:01.000Z" title="发表于 2023-01-12 22:07:01">2023-01-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/476a02c8/" title="openai注册">openai注册</a><time datetime="2023-01-02T06:07:50.000Z" title="发表于 2023-01-02 14:07:50">2023-01-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/bb8fab97/" title="云函数和服务器部署chatgpt接口">云函数和服务器部署chatgpt接口</a><time datetime="2023-01-01T16:20:00.000Z" title="发表于 2023-01-02 00:20:00">2023-01-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/8418bcbe/" title="win11拨号问题解决方案">win11拨号问题解决方案</a><time datetime="2022-09-16T05:29:19.000Z" title="发表于 2022-09-16 13:29:19">2022-09-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d37b869a/" title="python使用cookie免验证登入">python使用cookie免验证登入</a><time datetime="2022-09-12T05:35:18.000Z" title="发表于 2022-09-12 13:35:18">2022-09-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img.api.tianli0.top')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By 赖佳豪</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank"href="https://hexo.io/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo"title="博客框架为Hexo"alt="img"></a><a style="margin-inline:5px"target="_blank"href="https://butterfly.js.org/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender"title="主题采用butterfly"alt="img"></a><a style="margin-inline:5px"target="_blank"href="https://now.sh"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&logo=Vercel"title="本站使用部署于Vercel"alt="img"></a><a style="margin-inline:5px"target="_blank"href="https://github.com/TIANLI0/BF-OK"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Theme-d021d6?style=flat&logo=GitHub"title="本站项目由Gtihub托管"alt="img"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris"alt="img"title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a> <a style="margin-inline:5px"target="_blank"href="https://tianli-blog.club/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/CDN-Tianli-important?style=flat&logo=KeyCDN"title="感谢Tianli-CDN"alt="img"></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twc.laijiahao.cn/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twc.laijiahao.cn/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="/js/fun.js"></script><script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script><script src="https://img1.tianli0.top/statistic.js"></script><script src="https://cdn1.tianli0.top/npm/swiper/swiper-bundle.min.js"></script><script src="https://cdn1.tianli0.top/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><script src="/js/moments.js"></script><script src="/js/kernel.js"></script><script defer src="https://cdn1.tianli0.top/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer data-pjax src="/js/wow_init.js"></script><script src="//at.alicdn.com/t/c/font_3639040_xhoyfzkmr8c.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script></div><!-- hexo injector body_end start --><script data-pjax>function history_calendar_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-history"><div class="card-content"><div class="item-headline"><i class="fas fa-clock fa-spin"></i><span>那年今日</span></div><div id="history-baidu" style="height: 100px;overflow: hidden"><div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%"><div class="swiper-wrapper" id="history_container_wrapper" style="height:20px"></div></div></div></div>';
+                console.log('已挂载history_calendar')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            history_calendar_injector_config()
+        } </script><script data-pjax  src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><!-- hexo injector body_end end --></body></html>
