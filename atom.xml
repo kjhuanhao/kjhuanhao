@@ -6,7 +6,7 @@
   <link href="https://www.laijiahao.cn/atom.xml" rel="self"/>
   
   <link href="https://www.laijiahao.cn/"/>
-  <updated>2023-01-12T14:10:44.658Z</updated>
+  <updated>2023-01-14T06:48:33.959Z</updated>
   <id>https://www.laijiahao.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>maven的pom详解</title>
+    <link href="https://www.laijiahao.cn/posts/750a187d/"/>
+    <id>https://www.laijiahao.cn/posts/750a187d/</id>
+    <published>2023-01-14T06:48:11.000Z</published>
+    <updated>2023-01-14T06:48:33.959Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;附件1：POM文件总体配置说明&quot;&gt;&lt;a href=&quot;#附件1：POM文件总体配置说明&quot; class=&quot;headerlink&quot; title=&quot;附件1：POM文件总体配置说明&quot;&gt;&lt;/a&gt;附件1：POM文件总体配置说明&lt;/h1&gt;&lt;figure</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://www.laijiahao.cn/categories/java/"/>
+    
+    
+    <category term="pom" scheme="https://www.laijiahao.cn/tags/pom/"/>
+    
+  </entry>
   
   <entry>
     <title>MYSQL安装</title>
@@ -392,26 +417,6 @@
     
     
     <category term="刷机" scheme="https://www.laijiahao.cn/tags/%E5%88%B7%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【基础重制篇】搭建hexo博客（一）</title>
-    <link href="https://www.laijiahao.cn/posts/a1047ed6/"/>
-    <id>https://www.laijiahao.cn/posts/a1047ed6/</id>
-    <published>2022-06-29T08:10:54.000Z</published>
-    <updated>2022-12-17T04:04:43.362Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;你是否想拥有属于自己的博客？你是否无奈与自己不会写网站而烦恼？&lt;/p&gt;
-&lt;p&gt;不要担心，本系列教程将会实现你白嫖的愿望，连服务器都不需要买，就算没有任何编程基础也可以学会的搭建博客教程&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="hexo" scheme="https://www.laijiahao.cn/categories/hexo/"/>
-    
-    
-    <category term="hexo" scheme="https://www.laijiahao.cn/tags/hexo/"/>
     
   </entry>
   
