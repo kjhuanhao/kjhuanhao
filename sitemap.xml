@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.laijiahao.cn/About/index.html</loc>
+    
+    <lastmod>2023-02-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.laijiahao.cn/posts/476a02c8/</loc>
     
     <lastmod>2023-02-15</lastmod>
@@ -525,15 +534,6 @@
   
   <url>
     <loc>https://www.laijiahao.cn/ATRI/index.html</loc>
-    
-    <lastmod>2022-12-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.laijiahao.cn/About/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
